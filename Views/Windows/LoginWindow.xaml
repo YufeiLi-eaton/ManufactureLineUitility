@@ -1,0 +1,136 @@
+﻿<ui:FluentWindow x:Class="UiDesktopAppDemo.Views.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UiDesktopAppDemo.Views.Windows"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        mc:Ignorable="d"
+                 d:DataContext="{d:DesignInstance local:LoginWindow,
+                                   IsDesignTimeCreatable=True}"
+        Title="FTS"
+                 WindowStyle="None"
+                 Height="200" Width="400"
+                 ResizeMode="NoResize"
+ExtendsContentIntoTitleBar="True"
+WindowBackdropType="None"
+WindowCornerPreference="DoNotRound"
+WindowStartupLocation="CenterScreen"
+                 BorderThickness="0"
+                 >
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome
+            GlassFrameThickness="0"
+            ResizeBorderThickness="0"
+            UseAeroCaptionButtons="False"/>
+    </shell:WindowChrome.WindowChrome>
+    <Border
+        BorderBrush="White"
+            >
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="4*"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ui:TitleBar  CloseWindowByDoubleClickOnIcon="False" CanMaximize="False" ShowMaximize="False" Background="#005EB8">
+                <ui:TitleBar.Header>
+                    <ui:ImageIcon Margin="12" Source="pack://application:,,,/Assets/EATON2.png" />
+                </ui:TitleBar.Header>
+            </ui:TitleBar>
+            <Grid Grid.Row="1" ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                    Width="360"
+Padding="28,24"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+Background="#005EB8"
+BorderBrush="#E8ECF2"
+BorderThickness="1"
+CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect
+        Color="#000000"
+        BlurRadius="20"
+        ShadowDepth="3"
+        Direction="270"
+        Opacity="0.12"/>
+                    </Border.Effect>
+                    <Grid >
+
+                        <StackPanel  Grid.IsSharedSizeScope="True">
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" SharedSizeGroup="UserInput"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Right">
+                                    <ui:SymbolIcon Foreground="White" FontSize="18" Symbol="Person24" Filled="True" VerticalAlignment="Center"></ui:SymbolIcon>
+                                    <ui:TextBlock Style="{StaticResource TextStyle.BodyLarge}" Text="用户名：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <ui:DropDownButton Content="选择用户" Grid.Column="1">
+                                    <ui:DropDownButton.Flyout>
+                                        <ContextMenu>
+                                            <MenuItem Header="Admin"/>
+                                            <MenuItem Header="Manager"/>
+                                        </ContextMenu>
+                                    </ui:DropDownButton.Flyout>
+                                </ui:DropDownButton>
+                            </Grid>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition SharedSizeGroup="UserInput"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal"  Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <ui:SymbolIcon Foreground="White" FontSize="18" Symbol="Password16" Filled="True" VerticalAlignment="Center"></ui:SymbolIcon>
+                                    <ui:TextBlock Style="{StaticResource TextStyle.BodyLarge}" Text="密码：" HorizontalAlignment="Right" VerticalAlignment="Center"  />
+                                </StackPanel>
+
+                                <ui:PasswordBox Grid.Column="1" RevealButtonEnabled="False">
+                                    <ui:PasswordBox.InputBindings>
+                                        <KeyBinding Key="Enter" Command="{Binding LoginCommand}"/>
+                                     </ui:PasswordBox.InputBindings>
+                                </ui:PasswordBox>
+                            </Grid>
+                        </StackPanel>
+
+                    </Grid>
+                    
+                </Border>
+
+                <Grid Grid.Row="1">
+                    <ui:ToggleSwitch x:Name="Language"  Margin="60,0,0,0" LabelPosition="Right">
+                        <ui:ToggleSwitch.Content>
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>中文</Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsChecked ,ElementName=Language}" Value="False">
+                                                <Setter Property="Text" Value="English"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </ui:ToggleSwitch.Content>
+                    </ui:ToggleSwitch>
+                    <ui:Button Content="登录" FontWeight="UltraBold" Appearance="Transparent" HorizontalAlignment="Center" Command="{Binding LoginCommand}"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" ShowGridLines="True">
+                <ui:SnackbarPresenter Name="LoginSnackBar"></ui:SnackbarPresenter>
+            </Grid>
+        </Grid>
+    </Border>
+
+    
+</ui:FluentWindow>

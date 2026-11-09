@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <!--
+        Font families
+        Use DynamicResource if these resources may be replaced at runtime.
+    -->
+    <FontFamily x:Key="FontFamily.Default">Segoe UI, Microsoft YaHei UI</FontFamily>
+    <FontFamily x:Key="FontFamily.Display">Segoe UI Semibold, Microsoft YaHei UI</FontFamily>
+    <FontFamily x:Key="FontFamily.Monospace">Cascadia Mono, Consolas</FontFamily>
+
+    <!-- Font weights -->
+    <FontWeight x:Key="FontWeight.Regular">Regular</FontWeight>
+    <FontWeight x:Key="FontWeight.Medium">Medium</FontWeight>
+    <FontWeight x:Key="FontWeight.SemiBold">SemiBold</FontWeight>
+    <FontWeight x:Key="FontWeight.Bold">Bold</FontWeight>
+
+    <!-- Font sizes -->
+    <system:Double x:Key="FontSize.Caption">12</system:Double>
+    <system:Double x:Key="FontSize.Body">14</system:Double>
+    <system:Double x:Key="FontSize.BodyLarge">16</system:Double>
+    <system:Double x:Key="FontSize.Subtitle">18</system:Double>
+    <system:Double x:Key="FontSize.Title">24</system:Double>
+    <system:Double x:Key="FontSize.Display">32</system:Double>
+
+    <!-- Reusable text styles -->
+    <Style x:Key="TextStyle.Caption" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Default}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.Caption}"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.Regular}"/>
+    </Style>
+
+    <Style x:Key="TextStyle.Body" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Default}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.Body}"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.Regular}"/>
+    </Style>
+
+    <Style x:Key="TextStyle.BodyLarge" TargetType="TextBlock" BasedOn="{StaticResource TextStyle.Body}">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.BodyLarge}"/>
+    </Style>
+
+    <Style x:Key="TextStyle.Subtitle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Default}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.Subtitle}"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.SemiBold}"/>
+    </Style>
+
+    <Style x:Key="TextStyle.Title" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Display}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.Title}"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.SemiBold}"/>
+    </Style>
+
+    <Style x:Key="TextStyle.Display" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Display}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.Display}"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.Bold}"/>
+    </Style>
+
+    <Style x:Key="TextStyle.Code" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Monospace}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.Body}"/>
+        <Setter Property="FontWeight" Value="{DynamicResource FontWeight.Regular}"/>
+    </Style>
+</ResourceDictionary>

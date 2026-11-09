@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37806.7 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiDesktopAppDemo", "UiDesktopAppDemo.csproj", "{4754066A-D100-4AD6-9579-4E8DB1AD99FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4754066A-D100-4AD6-9579-4E8DB1AD99FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4754066A-D100-4AD6-9579-4E8DB1AD99FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4754066A-D100-4AD6-9579-4E8DB1AD99FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4754066A-D100-4AD6-9579-4E8DB1AD99FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {725E10DD-5319-4629-AF49-12263A0F8D7C}
+	EndGlobalSection
+EndGlobal
